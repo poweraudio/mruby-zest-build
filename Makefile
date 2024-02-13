@@ -27,7 +27,7 @@ linux:
 		-ldl -o zest -lX11 -lGL -lpthread -I deps/pugl -std=gnu99 -Wno-trigraphs \
 		$(LDFLAGS)
 
-osx: deps/libuv.a
+osx: deps/libuv.a deps/pugl/waflib
 	ruby ./rebuild-fcache.rb
 	cd deps/nanovg/src   && $(CC) nanovg.c -c -fPIC
 	$(AR) rc deps/libnanovg.a deps/nanovg/src/*.o
@@ -41,6 +41,12 @@ osx: deps/libuv.a
 		src/osc-bridge/libosc-bridge.a \
 		./deps/libuv/.libs/libuv.a  -lm -framework OpenGL -lpthread
 	$(CC) zest.c deps/pugl/build/libpugl-0.a -ldl -o zest -framework OpenGL -framework AppKit -lpthread -I deps/pugl -std=gnu99
+
+deps/pugl/waflib:
+	rm -f deps/pugl/waf
+	git clone https://github.com/poweraudio/autowaf deps/pugl/waflib
+	git -C deps/pugl/waflib checkout 1404d77833817870cc86245ce9675d5b31f8e733
+	cp deps/pugl/waflib/waf deps/pugl/
 
 windows: buildpuglwin deps/libuv-win.a
 	ruby ./rebuild-fcache.rb
