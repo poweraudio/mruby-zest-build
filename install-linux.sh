@@ -93,7 +93,7 @@ case "$bashcompdir" in
 esac
 if [ "$bashcompdir" ]
 then
-    ln -s /opt/zyn-fusion/completions/zyn-fusion "$bashcompdir"/zyn-fusion
+    ln -sf /opt/zyn-fusion/completions/zyn-fusion "$bashcompdir"/zyn-fusion
 fi
 
 echo ""
