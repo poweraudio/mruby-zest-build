@@ -1,3 +1,19 @@
+== PowerAudio fork of Zyn-Fusion UI
+
+This fork of Zyn-Fusion’s UI has the following changes:
+
+* The installation destination on GNU/Linux is customizable and defaults to
+  /usr/local.
+* Fixed installation of Bash completions.
+* Replaced `waf` binary blob in dependency with
+  https://github.com/drobilla/autowaf[autowaf].
+
+See also
+https://github.com/poweraudio/zyn-fusion-build[poweraudio/zyn-fusion-build],
+which uses this repository.
+
+'''
+
 = Zyn-Fusion User Interface
 
 
