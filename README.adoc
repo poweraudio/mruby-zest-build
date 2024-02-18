@@ -6,7 +6,7 @@ This fork of Zyn-Fusion’s UI has the following changes:
   /usr/local.
 * Fixed installation of Bash completions.
 * Replaced `waf` binary blob in dependency with
-  https://github.com/drobilla/autowaf[autowaf].
+  https://github.com/poweraudio/autowaf[autowaf].
 
 See also
 https://github.com/poweraudio/zyn-fusion-build[poweraudio/zyn-fusion-build],
